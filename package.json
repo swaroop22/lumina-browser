@@ -1,0 +1,32 @@
+{
+  "name": "lumina-browser",
+  "version": "1.0.0",
+  "description": "Lumina AI Browser — Autonomous Cognitive Desktop Browser",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev:ui": "vite",
+    "build:ui": "tsc && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build": "npm run build:ui && npm run build:electron",
+    "dev:backend": "python -m agent.api.main",
+    "dev": "concurrently -k \"vite\" \"electron .\"",
+    "start": "electron .",
+    "test:agent": "pytest agent/tests"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.9",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
